@@ -16,7 +16,7 @@ switch (suffix) {
         redirectTo = "http://zain.ovh";
 }
 
-if (redirectTo !== window.location.href) {
+if (redirectTo !== "http://zain.ovh") {
     setTimeout(function () {
         window.location.href = redirectTo;
     }, 5);
