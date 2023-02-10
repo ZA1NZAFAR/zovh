@@ -1,0 +1,13 @@
+body {
+    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#info {
+    display: inline-block;
+    text-align: left;
+}
+
+p {
+    margin: 10px 0;
+}
