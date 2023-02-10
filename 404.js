@@ -16,6 +16,12 @@ switch (suffix) {
         redirectTo = "http://zain.ovh";
 }
 
-setTimeout(function () {
-    window.location.href = redirectTo;
-}, 5000);
+if (redirectTo !== window.location.href) {
+    setTimeout(function () {
+        window.location.href = redirectTo;
+    }, 1000);
+} else {
+    setTimeout(function () {
+        window.location.href = redirectTo;
+    }, 5000);
+}
