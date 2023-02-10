@@ -19,7 +19,7 @@ switch (suffix) {
 if (redirectTo !== window.location.href) {
     setTimeout(function () {
         window.location.href = redirectTo;
-    }, 1000);
+    }, 5);
 } else {
     setTimeout(function () {
         window.location.href = redirectTo;
