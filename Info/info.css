@@ -1,5 +1,8 @@
+*{
+    font-family: "Courier New", Courier, monospace;
+}
+
 body {
-    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
     text-align: center;
 }
 

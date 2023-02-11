@@ -1,5 +1,8 @@
+*{
+    font-family: "Courier New", Courier, monospace;
+}
+
 .quoteClass {
-    font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
     font-weight: 200;
     font-size: 1.8em;
     text-align: center;
