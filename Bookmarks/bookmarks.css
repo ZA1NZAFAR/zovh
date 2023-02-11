@@ -1,0 +1,22 @@
+*{
+    font-family: "Courier New", Courier, monospace;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+}
+th {
+    background-color: lightgray;
+}
+.title, .link {
+    width: 20%;
+    overflow: auto;
+}
+.description {
+    width: 60%;
+    overflow: auto;
+}
