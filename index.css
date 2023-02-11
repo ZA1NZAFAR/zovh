@@ -58,13 +58,14 @@ button {
     font-size: 18px;
     background-color: transparent;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 10px 20px;
     margin: 20px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     display: inline-block;
-    width: calc(33.33% - 40px);
+    width: calc(30%);
+    height: calc(20% - 100px);
     text-align: center;
     color: black;
 }
@@ -78,6 +79,7 @@ p {
     font-size: 14px;
     margin-top: 50px;
     text-align: center;
+    bottom: 0;
 }
 
 a {
