@@ -50,10 +50,12 @@ input[type="text"] {
     margin-bottom: 20px;
 }
 
-
-
 #formatCode:hover {
     background-color: #444;
+}
+
+#radioButtons{
+    text-align: center;
 }
 
 
