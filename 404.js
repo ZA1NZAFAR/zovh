@@ -13,7 +13,7 @@ switch (suffix) {
         redirectTo = "http://zain.ovh/Resume/resume.html";
         break;
     case "beautify":
-        redirectTo = "http://zain.ovh/CodeFormatter/codeFormatter.html";
+        redirectTo = "http://zain.ovh/Beautifiers/beautify.html";
         break;
     default:
         redirectTo = "http://zain.ovh";

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Code Formatter</title>
 
-    <link rel="stylesheet" href="codeFormatter.css">
+    <link rel="stylesheet" href="scriptBeautifier.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.57.0/lib/codemirror.min.css">
 </head>
 <body>
@@ -14,14 +14,32 @@
     <label for="code-input"></label><textarea id="code-input"></textarea>
 </div>
 <br>
+
+<div id="radioButtons">
+    <label>
+        <input type="radio" name="option" value="xml"> xml
+    </label>
+    <label>
+        <input type="radio" name="option" value="json"> json
+    </label>
+    <label>
+        <input type="radio" name="option" value="css"> css
+    </label>
+    <label>
+        <input type="radio" name="option" value="sql"> sql
+    </label>
+</div>
+
+
 <div id="buttons">
     <button id="formatCode">Format Code</button>
     <button id="enableLines">Enable Lines</button>
 </div>
 
-<script src="codeFormatter.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-beautify@1.10.0/js/lib/beautify.js"></script>
+<script src="scriptBeautifier.js"></script>
+<script src="../../libs/vkbeautify.0.99.00.beta.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/codemirror@5.57.0/lib/codemirror.min.js"></script>
+
 
 
 </body>
