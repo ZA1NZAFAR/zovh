@@ -1,5 +1,8 @@
 *{
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Rubik", sans-serif;
+    margin: 0rem;
+    text-transform: uppercase;
+    transition: opacity 250ms ease;
 }
 
 header {
