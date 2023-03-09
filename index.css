@@ -3,6 +3,10 @@
     --blue: rgb(41, 121, 255);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @keyframes float {
     from, to {
         transform: translateY(-0%);
