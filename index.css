@@ -38,6 +38,11 @@ body {
     justify-content: space-between;
 }
 
+.line:hover {
+    font-weight: bold;
+}
+
+
 .word {
     color: black;
     font-size: 80px;
