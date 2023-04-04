@@ -178,7 +178,7 @@ let touchStartY = null;
 const minSwipeDistance = 5; // Adjust this value to change the swipe sensitivity
 
 let lastTouchTime = 0;
-const doubleTapThreshold = 150; // Time in milliseconds between taps to consider it a double tap
+const doubleTapThreshold = 100; // Time in milliseconds between taps to consider it a double tap
 
 document.addEventListener("touchstart", (event) => {
     const currentTime = new Date().getTime();
