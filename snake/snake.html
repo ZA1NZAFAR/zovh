@@ -4,36 +4,30 @@
   <meta charset="UTF-8">
   <title>Snake Game</title>
   <style>
+    html,
     body {
-      overflow: hidden;
-      height: 100%;
       width: 100%;
-      position: fixed;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
 
     canvas {
       border: 1px solid #ccc;
       display: block;
-      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      zoom: 2;
     }
 
-    .controls {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .controls-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #up, #down, #left, #right {
-      width: 60px;
-      height: 40px;
-      margin: 5px;
+    button{
+      visibility: hidden;
     }
 
   </style>
