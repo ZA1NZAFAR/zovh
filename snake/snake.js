@@ -172,3 +172,55 @@ rightBtn.addEventListener("click", () => {
         snake.dy = 0;
     }
 });
+
+let touchStartX = null;
+let touchStartY = null;
+const minSwipeDistance = 5; // Adjust this value to change the swipe sensitivity
+
+document.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+}, false);
+
+document.addEventListener("touchmove", (event) => {
+    // Prevent scrolling while swiping on the canvas
+    event.preventDefault();
+}, false);
+
+document.addEventListener("touchend", (event) => {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    let deltaX = event.changedTouches[0].clientX - touchStartX;
+    let deltaY = event.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(deltaX) > minSwipeDistance || Math.abs(deltaY) > minSwipeDistance) {
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0 && snake.dx === 0) {
+                // Swipe right
+                snake.dx = 10;
+                snake.dy = 0;
+            } else if (deltaX < 0 && snake.dx === 0) {
+                // Swipe left
+                snake.dx = -10;
+                snake.dy = 0;
+            }
+        } else {
+            if (deltaY > 0 && snake.dy === 0) {
+                // Swipe down
+                snake.dy = 10;
+                snake.dx = 0;
+            } else if (deltaY < 0 && snake.dy === 0) {
+                // Swipe up
+                snake.dy = -10;
+                snake.dx = 0;
+            }
+        }
+    }
+
+    // Reset the touch coordinates
+    touchStartX = null;
+    touchStartY = null;
+}, false);
+
