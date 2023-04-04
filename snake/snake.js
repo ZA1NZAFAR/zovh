@@ -177,10 +177,24 @@ let touchStartX = null;
 let touchStartY = null;
 const minSwipeDistance = 5; // Adjust this value to change the swipe sensitivity
 
+let lastTouchTime = 0;
+const doubleTapThreshold = 200; // Time in milliseconds between taps to consider it a double tap
+
 document.addEventListener("touchstart", (event) => {
+    const currentTime = new Date().getTime();
+    const timeDifference = currentTime - lastTouchTime;
+
+    // Ignore double taps
+    if (timeDifference < doubleTapThreshold) {
+        return;
+    }
+
     touchStartX = event.touches[0].clientX;
     touchStartY = event.touches[0].clientY;
+
+    lastTouchTime = currentTime;
 }, false);
+
 
 document.addEventListener("touchmove", (event) => {
     // Prevent scrolling while swiping on the canvas
