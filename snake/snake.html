@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .controls-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #up, #down, #left, #right {
+      width: 60px;
+      height: 40px;
+      margin: 5px;
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+<div class="controls">
+  <div class="controls-row">
+    <button id="up">Up</button>
+  </div>
+  <div class="controls-row">
+    <button id="left">Left</button>
+    <button id="down">Down</button>
+    <button id="right">Right</button>
+  </div>
+</div>
+<script src="snake.js"></script>
+</body>
+</html>
