@@ -15,6 +15,9 @@ switch (suffix) {
     case "beautify":
         redirectTo = "http://zain.ovh/Beautifiers/beautify.html";
         break;
+    case "welhome":
+        redirectTo = "http://zain.ovh:9091";
+        break;
     default:
         redirectTo = "http://zain.ovh";
 }
