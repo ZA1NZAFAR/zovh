@@ -61,8 +61,8 @@ function loop() {
     // Check if the snake has eaten the food
     if (snake.x === food.x && snake.y === food.y) {
         food = generateFood();
-        snake.maxCells++;
-        score++; // Increment the score
+        snake.maxCells++; // Increase the snake's size
+        score++ // Increment the score
     }
 
     // Check if the snake has collided with itself
@@ -130,16 +130,35 @@ function generateFood() {
 }
 
 // Helper function to reset the snake
+// Helper function to reset the snake
 function resetSnake() {
-    return {
-        x: 10,
-        y: 10,
-        dx: 10,
-        dy: 0,
-        cells: [],
-        maxCells: 4
-    };
+    // Show the popup with the score
+    const popup = document.getElementById("game-over-popup");
+    const scoreSpan = document.getElementById("score");
+    scoreSpan.textContent = score;
+    popup.style.display = "block";
+
+    // Add an event listener to the Play Again button
+    const playAgainBtn = document.getElementById("play-again-btn");
+    playAgainBtn.addEventListener("click", () => {
+        // Hide the popup
+        popup.style.display = "none";
+
+        // Reset the score
+        score = 0;
+
+        // Reset the snake
+        return {
+            x: 10,
+            y: 10,
+            dx: 10,
+            dy: 0,
+            cells: [],
+            maxCells: 4
+        };
+    });
 }
+
 
 const upBtn = document.getElementById("up");
 upBtn.addEventListener("click", () => {
@@ -237,4 +256,5 @@ document.addEventListener("touchend", (event) => {
     touchStartX = null;
     touchStartY = null;
 }, false);
+
 

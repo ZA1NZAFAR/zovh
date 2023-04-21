@@ -12,7 +12,6 @@
       padding: 0;
       overflow: hidden;
     }
-
     canvas {
       border: 1px solid #ccc;
       display: block;
@@ -31,10 +30,12 @@
     }
 
   </style>
+  <link rel="stylesheet" href="snake.css">
 </head>
 <body>
 <p>Leaderboard</p>
-<p>Jesssy VY    (45)</p>
+<p>Jessy VY     (45)</p>
+<p>Ali AKBAR    (38)</p>
 <p>Karim ZHAN   (33)</p>
 <p>Ratiba KADI  (26)</p>
 <canvas id="canvas" width="400" height="400"></canvas>
@@ -47,6 +48,16 @@
     <button id="down">Down</button>
     <button id="right">Right</button>
   </div>
+
+  <div id="game-over-popup" class="popup">
+    <div class="popup-content">
+      <h2>Game Over!</h2>
+      <p>Your score is: <span id="score"></span></p>
+      <button id="play-again-btn">Play Again</button>
+    </div>
+  </div>
+
+
 </div>
 <script src="snake.js"></script>
 </body>
