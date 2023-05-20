@@ -3,26 +3,27 @@ var redirectTo;
 
 switch (suffix) {
     case "note":
-        redirectTo = "http://zain.ovh/Note/note.html";
+        redirectTo = "https://zain.ovh/Note/note.html";
         break;
-    case "quotes":
-        redirectTo = "http://zain.ovh/Quotes/quote.html";
+    case "snake":
+        redirectTo = "https://zain.ovh/Snake/snake.html";
         break;
     case "resume":
     case "cv":
-        redirectTo = "http://zain.ovh/Resume/resume.html";
+        redirectTo = "https://zain.ovh/Resume/resume.html";
         break;
     case "beautify":
-        redirectTo = "http://zain.ovh/Beautifiers/beautify.html";
+        redirectTo = "https://zain.ovh/Beautifiers/beautify.html";
         break;
-    case "welhome":
-        redirectTo = "http://zain.ovh:9091";
+    case "home":
+    case "nav":
+        redirectTo = "https://zain.ovh:Navigation/navigation.html";
         break;
     default:
-        redirectTo = "http://zain.ovh";
+        redirectTo = "https://zain.ovh";
 }
 
-if (redirectTo !== "http://zain.ovh") {
+if (redirectTo !== "https://zain.ovh") {
     setTimeout(function () {
         window.location.href = redirectTo;
     }, 5);
