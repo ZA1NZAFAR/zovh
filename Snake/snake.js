@@ -2,7 +2,7 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Set up the snake
+// Set up the Snake
 let snake = {
     x: 10,
     y: 10,
@@ -23,11 +23,11 @@ function loop() {
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Move the snake
+    // Move the Snake
     snake.x += snake.dx;
     snake.y += snake.dy;
 
-    // Wrap the snake around the screen
+    // Wrap the Snake around the screen
     if (snake.x < 0) {
         snake.x = canvas.width - 10;
     } else if (snake.x >= canvas.width) {
@@ -40,7 +40,7 @@ function loop() {
         snake.y = 0;
     }
 
-    // Add a new cell to the snake
+    // Add a new cell to the Snake
     snake.cells.unshift({ x: snake.x, y: snake.y });
 
     // Remove cells beyond the maxCells limit
@@ -48,7 +48,7 @@ function loop() {
         snake.cells.pop();
     }
 
-    // Draw the snake
+    // Draw the Snake
     ctx.fillStyle = "green";
     snake.cells.forEach(cell => {
         ctx.fillRect(cell.x, cell.y, 10, 10);
@@ -58,14 +58,14 @@ function loop() {
     ctx.fillStyle = "red";
     ctx.fillRect(food.x, food.y, 10, 10);
 
-    // Check if the snake has eaten the food
+    // Check if the Snake has eaten the food
     if (snake.x === food.x && snake.y === food.y) {
         food = generateFood();
-        snake.maxCells++; // Increase the snake's size
+        snake.maxCells++; // Increase the Snake's size
         score++ // Increment the score
     }
 
-    // Check if the snake has collided with itself
+    // Check if the Snake has collided with itself
     snake.cells.forEach((cell, index) => {
         if (index !== 0 && snake.x === cell.x && snake.y === cell.y) {
             snake = resetSnake();
@@ -129,8 +129,8 @@ function generateFood() {
     };
 }
 
-// Helper function to reset the snake
-// Helper function to reset the snake
+// Helper function to reset the Snake
+// Helper function to reset the Snake
 function resetSnake() {
     // Show the popup with the score
     const popup = document.getElementById("game-over-popup");
@@ -147,7 +147,7 @@ function resetSnake() {
         // Reset the score
         score = 0;
 
-        // Reset the snake
+        // Reset the Snake
         return {
             x: 10,
             y: 10,

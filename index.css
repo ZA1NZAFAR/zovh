@@ -1,173 +1,83 @@
-:root {
-    --green: rgb(42, 252, 152);
-    --blue: rgb(41, 121, 255);
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-::-webkit-scrollbar {
-    display: none;
-}
-
-@keyframes float {
-    from, to {
-        transform: translateY(-0%);
-    }
-
-    50% {
-        transform: translateY(-3%);
-    }
-}
-
-@keyframes background-pan {
-    from {
-        background-position: 1000% center;
-    }
-
-    to {
-        background-position: 0% center;
-    }
-}
-
-body {
-    background-color: white;
+body, html {
     margin: 0;
-    place-items: center;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    background-color: black;
 }
 
-.line {
+.container {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    animation: gradient 15s ease infinite;
+    background-size: 200% 200%;
+    text-align: center;
 }
 
-.line:hover {
-    font-weight: bold;
+
+.name {
+    font-size: 4em;
+    color: white;
 }
 
-
-.word {
-    color: black;
-    font-size: 80px;
-    font-family: "Rubik", sans-serif;
-    margin: 0rem;
-    text-transform: uppercase;
-    transition: opacity 250ms ease;
+.intro {
+    font-size: 2em;
+    color: white;
 }
 
-a {
-    text-decoration: none;
+.socials {
+    display: flex;
+    justify-content: center;
 }
 
-#text:has(.fancy:hover) .word:not(.fancy:hover) {
-    opacity: 0.2;
+.linkedin,
+.github {
+    margin-right: 20px;
 }
 
-.fancy span {
+.socials img {
+    height: 40px;
+    width: 40px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.tooltip {
+    margin-left: 10px;
+    position: relative;
     display: inline-block;
 }
 
-.fancy > .outer {
-    transition: transform 350ms ease;
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.fancy:hover > .outer {
-    transition-duration: 800ms;
-}
-
-.fancy:hover > .outer > .inner {
-    animation: float 5s ease infinite;
-}
-
-.fancy:hover > .outer > .inner > .letter {
-    background: linear-gradient(
-            to right,
-            var(--blue),
-            var(--green),
-            var(--blue)
-    );
-    background-size: 1000%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: background-pan 150s linear infinite;
-}
-
-.fancy:hover > .outer:nth-child(1) {
-    transform: translate(-80%, 60%) rotate(8deg);
-}
-
-.fancy:hover > .outer:nth-child(2) {
-    transform: translate(-40%, 20%) rotate(4deg);
-}
-
-.fancy:hover > .outer:nth-child(3) {
-    transform: translate(-10%, 60%) rotate(-6deg);
-}
-
-.fancy:hover > .outer:nth-child(4) {
-    transform: translate(0%, 8%) rotate(-8deg);
-}
-
-.fancy:hover > .outer:nth-child(5) {
-    transform: translate(0%, -20%) rotate(5deg);
-}
-
-.fancy:hover > .outer:nth-child(6) {
-    transform: translate(0%, 20%) rotate(-3deg);
-}
-
-.fancy:hover > .outer:nth-child(7) {
-    transform: translate(0%, -40%) rotate(-5deg);
-}
-
-.fancy:hover > .outer:nth-child(8) {
-    transform: translate(0%, 15%) rotate(10deg);
-}
-
-.fancy:hover > .outer:nth-child(9) {
-    transform: translate(0%, -50%) rotate(8deg);
-}
-
-.fancy:hover > .outer:nth-child(10) {
-    transform: translate(0%, 15%) rotate(-6deg);
-}
-
-.fancy:hover > .outer:nth-child(11) {
-    transform: translate(50%, -10%) rotate(-3deg);
-}
-
-.fancy:hover > .outer:nth-child(12) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-.fancy:hover > .outer:nth-child(13) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(14) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(15) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(16) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(17) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(18) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(19) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-
-.fancy:hover > .outer:nth-child(20) {
-    transform: translate(120%, -30%) rotate(-10deg);
-}
-.zz{
-    display: flex;
-    justify-content: center;
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
