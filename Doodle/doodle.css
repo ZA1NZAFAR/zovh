@@ -10,3 +10,19 @@ body {
 #gameCanvas {
     border: 1px solid #fff;
 }
+.control-button {
+    position: fixed;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+    border: none;
+    border-radius: 30px;
+    font-size: 2em;
+}
+#left-button {
+    left: 10px;
+}
+#right-button {
+    right: 10px;
+}

@@ -12,6 +12,9 @@ let rightArrow = false;
 let gameRunning = true;
 let score = 0;
 
+let baseSpeed = 1; // Base speed of platforms
+let speedIncrement = 0.1; // Increment for each jump
+
 const spacing = 60; // Define a minimum spacing between platforms
 
 class Platform {
@@ -63,7 +66,7 @@ function update() {
 
     // Move platforms down continuously
     platforms.forEach((p, i) => {
-        p.y += 1;
+        p.y += baseSpeed + speedIncrement * score; // Increase speed with score
         if (p.y > canvas.height) {
             let highestPlatform = Math.min(...platforms.map(p => p.y));
             platforms[i] = new Platform(Math.random() * (canvas.width - 50), highestPlatform - spacing);
@@ -131,34 +134,13 @@ window.addEventListener('deviceorientation', (e) => {
 });
 
 
-// Existing code ...
+// Your previous JavaScript code...
 
-function requestOrientationPermission() {
-    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        DeviceOrientationEvent.requestPermission()
-            .then(permissionState => {
-                if (permissionState === 'granted') {
-                    window.addEventListener('deviceorientation', handleDeviceOrientation);
-                }
-            })
-            .catch(console.error);
-    } else {
-        // handle regular non iOS 13+ devices
-        window.addEventListener('deviceorientation', handleDeviceOrientation);
-    }
-}
+let leftButton = document.getElementById('left-button');
+let rightButton = document.getElementById('right-button');
 
-function handleDeviceOrientation(e) {
-    let tilt = Math.round(e.beta); // Get the device tilt
-    if (tilt > 30) rightArrow = true;
-    else if (tilt < -30) leftArrow = true;
-    else {
-        rightArrow = false;
-        leftArrow = false;
-    }
-}
+leftButton.addEventListener('touchstart', () => leftArrow = true);
+leftButton.addEventListener('touchend', () => leftArrow = false);
 
-// At the end of your setup() function...
-setup();
-update();
-requestOrientationPermission();
+rightButton.addEventListener('touchstart', () => rightArrow = true);
+rightButton.addEventListener('touchend', () => rightArrow = false);
