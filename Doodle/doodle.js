@@ -119,3 +119,13 @@ window.addEventListener('keyup', (e) => {
     if (e.key === 'ArrowLeft') leftArrow = false;
     if (e.key === 'ArrowRight') rightArrow = false;
 });
+
+window.addEventListener('deviceorientation', (e) => {
+    let tilt = Math.round(e.beta); // Get the device tilt
+    if (tilt > 30) rightArrow = true;
+    else if (tilt < -30) leftArrow = true;
+    else {
+        rightArrow = false;
+        leftArrow = false;
+    }
+});
