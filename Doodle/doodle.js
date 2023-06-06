@@ -129,3 +129,36 @@ window.addEventListener('deviceorientation', (e) => {
         leftArrow = false;
     }
 });
+
+
+// Existing code ...
+
+function requestOrientationPermission() {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+            .then(permissionState => {
+                if (permissionState === 'granted') {
+                    window.addEventListener('deviceorientation', handleDeviceOrientation);
+                }
+            })
+            .catch(console.error);
+    } else {
+        // handle regular non iOS 13+ devices
+        window.addEventListener('deviceorientation', handleDeviceOrientation);
+    }
+}
+
+function handleDeviceOrientation(e) {
+    let tilt = Math.round(e.beta); // Get the device tilt
+    if (tilt > 30) rightArrow = true;
+    else if (tilt < -30) leftArrow = true;
+    else {
+        rightArrow = false;
+        leftArrow = false;
+    }
+}
+
+// At the end of your setup() function...
+setup();
+update();
+requestOrientationPermission();
