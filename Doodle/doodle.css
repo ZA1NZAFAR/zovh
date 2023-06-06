@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -10,6 +16,7 @@ body {
 #gameCanvas {
     border: 1px solid #fff;
 }
+
 .control-button {
     position: fixed;
     bottom: 10px;
@@ -20,9 +27,11 @@ body {
     border-radius: 30px;
     font-size: 2em;
 }
+
 #left-button {
     left: 10px;
 }
+
 #right-button {
     right: 10px;
 }

@@ -144,3 +144,22 @@ leftButton.addEventListener('touchend', () => leftArrow = false);
 
 rightButton.addEventListener('touchstart', () => rightArrow = true);
 rightButton.addEventListener('touchend', () => rightArrow = false);
+
+
+let lastTouchTime = 0;
+const doubleTapThreshold = 100; // Time in milliseconds between taps to consider it a double tap
+
+document.addEventListener("touchstart", (event) => {
+    const currentTime = new Date().getTime();
+    const timeDifference = currentTime - lastTouchTime;
+
+    // Ignore double taps
+    if (timeDifference < doubleTapThreshold) {
+        return;
+    }
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+
+    lastTouchTime = currentTime;
+}, false);
