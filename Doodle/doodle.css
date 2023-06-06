@@ -20,8 +20,8 @@ body {
 .control-button {
     position: fixed;
     bottom: 10px;
-    width: 60px;
-    height: 60px;
+    width: 200px;
+    height: 200px;
     background: #ddd;
     border: none;
     border-radius: 30px;
