@@ -19,6 +19,7 @@ body {
     background: radial-gradient(circle, #000 1px, transparent 1px);
     background-size: 20px 20px;
     animation: moveDots 2s linear infinite;
+    z-index: 0; /* Keep the background behind the profile picture */
 }
 
 @keyframes moveDots {
@@ -110,3 +111,20 @@ body {
 .footer p {
     margin: 0;
 }
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative; /* Ensure the profile picture is positioned in the stacking context */
+    z-index: 1; /* Place it in front of the dotted background */
+}
+
+.profile-picture img {
+    filter: grayscale(100%); /* Apply grayscale effect */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
