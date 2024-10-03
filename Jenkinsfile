@@ -5,7 +5,7 @@ pipeline {
         REPO_URL = 'https://github.com/ZA1NZAFAR/zovh.git'
         BASE_DIR = '/var/www/zain.ovh'
         DEPLOY_DIR = "${BASE_DIR}/public_html"
-        BRANCH = 'main'  // Branch to clone
+        BRANCH = 'master'
     }
 
     stages {
